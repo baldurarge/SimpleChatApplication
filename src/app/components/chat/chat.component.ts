@@ -8,7 +8,7 @@ import { DbService } from '../../services/db.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements AfterViewInit {
+export class ChatComponent{
   user:any;
   name:string;
   message:string;
@@ -19,15 +19,21 @@ export class ChatComponent implements AfterViewInit {
     this.ready = false;
     auth.user.subscribe((s)=>{
       this.user = s;
+      if(this.user){
+        this.messages = db.messages;
+
+        db.messages.subscribe((s)=>{
+          var div = document.getElementById('messageDiv');
+          div.scrollTop = div.scrollHeight + 10000;
+        });
+        this.div_show();
+      }else{
+        this.ready = true;
+      }
+
     });
 
-    this.messages = db.messages;
 
-    db.messages.subscribe((s)=>{
-      var div = document.getElementById('messageDiv');
-      div.scrollTop = div.scrollHeight + 10000;
-    });
-    this.div_show();
    }
 
 
@@ -39,9 +45,10 @@ export class ChatComponent implements AfterViewInit {
     div_show(){
       var that = this;
       setTimeout(function () {
+        that.ready = true;
         var div = document.getElementById('messageDiv');
         div.scrollTop = div.scrollHeight + 10000;
-          that.ready = true;
+
       }, 2000);
     }
 

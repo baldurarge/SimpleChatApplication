@@ -23,8 +23,6 @@ var config = {
     messagingSenderId: "63490617919"
   };
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
