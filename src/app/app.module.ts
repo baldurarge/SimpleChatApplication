@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+// FIREBASE CONFIG
 var config = {
     apiKey: "THEKEY",
     authDomain: "THEDOMAIN",
