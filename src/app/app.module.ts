@@ -15,12 +15,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 var config = {
-    apiKey: "AIzaSyABSfsISu85eJ2qbfZ0sTNezAZG4NCmb70",
-    authDomain: "chatapp-6bcb1.firebaseapp.com",
-    databaseURL: "https://chatapp-6bcb1.firebaseio.com",
-    projectId: "chatapp-6bcb1",
-    storageBucket: "chatapp-6bcb1.appspot.com",
-    messagingSenderId: "63490617919"
+    apiKey: "THEKEY",
+    authDomain: "THEDOMAIN",
+    databaseURL: "THEURL",
+    projectId: "ID",
+    storageBucket: "BUCKET",
+    messagingSenderId: "ID"
   };
 
 @NgModule({
